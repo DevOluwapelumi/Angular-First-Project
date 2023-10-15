@@ -1,0 +1,93 @@
+<app-navbar></app-navbar>
+<div class="container mx-auto p-5">
+  <div class="row">
+    <div class="col-md-6 mx-auto">
+      <form class="card shadow-lg border-0">
+        <h1></h1>
+        <div class="card-body">
+          <div class="form-group mb-4">
+            <label>First Name</label>
+            <input
+              type="text"
+              name="firstname"
+              class="form-control"
+              [(ngModel)]="firstname"
+            />
+          </div>
+          <div class="form-group mb-4">
+            <label>Last Name</label>
+            <input
+              type="text"
+              name="lastname"
+              class="form-control"
+              [(ngModel)]="lastname"
+            />
+          </div>
+          <div class="form-group mb-4">
+            <label>Email</label>
+            <input
+              type="text"
+              name="email"
+              class="form-control"
+              [(ngModel)]="email"
+            />
+          </div>
+          <div class="form-group mb-4">
+            <label>Phone</label>
+            <input
+              type="number"
+              name="phone"
+              class="form-control"
+              [(ngModel)]="phone"
+            />
+          </div>
+          <div class="form-group mb-4">
+            <label>Gender</label>
+            <input
+              type="text"
+              name="gender"
+              class="form-control"
+              [(ngModel)]="gender"
+            />
+          </div>
+          <div class="form-group mb-4 d-grid">
+            <button class="btn btn-primary btn-lg" (click)="addContact()">
+              SUBMIT
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  <!-- Table -->
+  <div class="card border-0 shadow-lg mt-5">
+    <div class="card-body">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">First</th>
+            <th scope="col">Last</th>
+            <th scope="col">Email</th>
+            <th scope="col">Phone</th>
+            <th scope="col">Gender</th>
+            <th scope="col">Edit</th>
+            <th scope="col">Delete</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let contact of contactArray; let id = index">
+            <th scope="row">{{ id + 1 }}</th>
+            <td>{{ contact.Firstname }}</td>
+            <td>{{ contact.Lastname }}</td>
+            <td>{{ contact.Email }}</td>
+            <td>{{ contact.Phone }}</td>
+            <td>{{ contact.Gender }}</td>
+            <td><a href="#" class="btn btn-outline-primary">Edit</a></td>
+            <td><a href="#" class="btn btn-outline-danger">Delete</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
